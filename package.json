@@ -1,7 +1,7 @@
 {
   "name": "hire-me-please",
   "version": "1.0.0",
-  "description": "A web app where job seekers can track job applications, statuses and interviews.",
+  "description": "A web app where job seekers can track job applications, statuses, and interviews.",
   "main": "index.js",
   "scripts": {
     "start": "react-scripts start",
@@ -12,9 +12,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-scripts": "^3.0.1"
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-scripts": "^5.0.0"
   },
   "browserslist": {
     "production": [
@@ -29,3 +29,4 @@
     ]
   }
 }
+
