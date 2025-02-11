@@ -1,9 +1,9 @@
 services:
   - type: web
     name: hire-me-please
-    env: node
+    env: node  # Explicitly setting the environment to Node.js
     buildCommand: npm install && npm run build
     startCommand: npm run start
     envVars:
       - key: NODE_VERSION
-        value: "18.x"  # Specify the correct version here (e.g., 16.x or 18.x)
+        value: "18.x"
