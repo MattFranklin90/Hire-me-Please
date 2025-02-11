@@ -11,6 +11,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": "16.x"
+  },
   "dependencies": {
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
@@ -29,4 +32,5 @@
     ]
   }
 }
+
 
