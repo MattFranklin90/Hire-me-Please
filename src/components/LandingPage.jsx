@@ -1,52 +1,39 @@
-import React from 'react';
-import '../index.css';  // Correct path relative to the components folder
+import React from "react";
+import "../index.css"; // Ensure styles are correctly linked
 
 const LandingPage = () => {
   return (
-    <div>
-      {/* Rectangle 3 */}
-      <div className="rectangle-3"></div>
-
-      {/* Hire Me, Please! */}
-      <div className="hire-me-title">Hire Me, Please!</div>
-
-      {/* Rectangle 12 */}
-      <div className="rectangle-12"></div>
-
-      {/* Rectangle 4 */}
-      <div className="rectangle-4"></div>
+    <div className="landing-container">
+      {/* Header Section */}
+      <header className="header">
+        <h1 className="hire-me-title">Hire Me, Please!</h1>
+        <p className="tagline">Get your act together with this application tracking tool</p>
+      </header>
 
       {/* Job Description */}
-      <div className="job-description">
-        job hunting got you down? hire me, please! can help you find opportunities and keep track of applications. simply create an account, log into your profile and browse all the available job openings in your area. good luck!
-      </div>
+      <section className="job-description-section">
+        <p className="job-description">
+          Job hunting got you down? <strong>Hire Me, Please!</strong> can help you find opportunities and keep track of applications. Simply create an account, log in, and browse all available job openings in your area. Good luck!
+        </p>
+      </section>
 
-      {/* Rectangle 13 */}
-      <div className="rectangle-13"></div>
+      {/* Login Section */}
+      <section className="login-section">
+        <h2>Sign in to get started</h2>
+        <form className="login-form">
+          <label htmlFor="username">Username</label>
+          <input type="text" id="username" placeholder="Enter your username" />
 
-      {/* Rectangle 14 */}
-      <div className="rectangle-14"></div>
+          <label htmlFor="password">Password</label>
+          <input type="password" id="password" placeholder="Enter your password" />
 
-      {/* Username */}
-      <div className="username">Username</div>
+          <button type="submit" className="login-btn">Login</button>
+        </form>
 
-      {/* Password */}
-      <div className="password">Password</div>
-
-      {/* Login */}
-      <div className="login">Login</div>
-
-      {/* New user? Register here */}
-      <div className="new-user-register">New user? Register here</div>
-
-      {/* Sign in to get started */}
-      <div className="sign-in-start">Sign in to get started</div>
-
-      {/* Text */}
-      <div className="text"></div>
-
-      {/* Application Tracking Text */}
-      <div className="application-tracking">Get your act together with this application tracking tool</div>
+        <p className="register-text">
+          New user? <a href="/register">Register here</a>
+        </p>
+      </section>
     </div>
   );
 };
