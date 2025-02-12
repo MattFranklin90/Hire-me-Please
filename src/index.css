@@ -1,128 +1,183 @@
-/* Global Styles */
+/* General Body and Container Styles */
 body {
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #f5f5f5;
-  }
-  
-  /* Landing Page Container */
-  .landing-container {
-    width: 90%;
-    max-width: 1080px;
-    text-align: center;
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Header Section */
-  .header {
-    background: #724F4F;
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
-  }
-  
-  .hire-me-title {
-    font-family: 'Jaro', sans-serif;
-    font-size: 70px;
-    margin: 10px 0;
-  }
-  
-  .tagline {
-    font-size: 20px;
-    font-style: italic;
-  }
-  
-  /* Job Description */
-  .job-description-section {
-    background: #AEAEC2;
-    color: #4A3030;
-    padding: 20px;
-    border-radius: 10px;
-    margin: 20px 0;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  }
-  
-  .job-description {
-    font-size: 24px;
-    line-height: 1.5;
-  }
-  
-  /* Login Section */
-  .login-section {
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    border: 2px solid #AEAEC2;
-    text-align: left;
-  }
-  
-  .login-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  label {
-    font-size: 20px;
-    font-weight: 500;
-  }
-  
-  input {
-    width: 100%;
-    padding: 10px;
-    font-size: 18px;
-    border: 1px solid #D9D9D9;
-    border-radius: 5px;
-  }
-  
-  .login-btn {
-    width: 100%;
-    padding: 10px;
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-    background-color: #724F4F;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .login-btn:hover {
-    background-color: #5a3a3a;
-  }
-  
-  .register-text {
-    font-size: 16px;
-    text-align: center;
-    margin-top: 10px;
-  }
-  
-  .register-text a {
-    color: #724F4F;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  .register-text a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Footer */
-  .footer {
-    background: #724F4F;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    margin-top: 20px;
-    font-size: 18px;
-    border-radius: 10px;
-  }
-  
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #74b9ff, #dfe6e9); /* Cool gradient from light blue to light gray */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #333;
+}
+
+/* Main container for login/register with image */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+/* Image Section */
+.auth-image {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-image img {
+  max-width: 80%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.auth-image img:hover {
+  transform: scale(1.05); 
+}
+
+/* Form content section */
+.auth-content {
+  flex: 1.2;
+  padding: 40px;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-left: 1px solid #e0e0e0;
+  background-color: #fff;
+}
+
+/* Header styles */
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.hire-me-title {
+  font-size: 40px;
+  font-weight: 700;
+  color: #2d2d2d;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.tagline {
+  font-size: 16px;
+  color: #7f8c8d;
+  margin-bottom: 25px;
+}
+
+/* Tabs for switching between login/register */
+.tab-switcher {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.tab-btn {
+  padding: 12px 25px;
+  font-size: 16px;
+  background-color: #ecf0f1;
+  border: 2px solid #dcdcdc;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
+  color: #34495e;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.tab-btn.active {
+  background-color: #3498db; /* Blue */
+  color: white;
+  border-color: #3498db;
+}
+
+.tab-btn:hover {
+  background-color: #bdc3c7;
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Form Styling */
+.auth-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-form label {
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #5f6368;
+  font-weight: 500;
+}
+
+.auth-form input {
+  padding: 14px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fafafa;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+.auth-form input:focus {
+  border-color: #3498db; /* Blue */
+  outline: none;
+  box-shadow: 0 0 6px rgba(52, 152, 219, 0.5); /* Soft blue glow */
+}
+
+.auth-btn {
+  padding: 15px;
+  font-size: 18px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.auth-btn:hover {
+  background-color: #2980b9; 
+  transform: translateY(-3px); 
+}
+
+.auth-btn:active {
+  transform: translateY(1px); 
+}
+
+/* Link to switch between forms */
+.register-text {
+  text-align: center;
+}
+
+.switch-btn {
+  background: none;
+  border: none;
+  color: #3498db; 
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.switch-btn:hover {
+  color: #2980b9; 
+}
