@@ -3,12 +3,12 @@ body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
-  background: linear-gradient(135deg, #74b9ff, #dfe6e9); /* Cool gradient from light blue to light gray */
+  background: linear-gradient(135deg, #2c3e50, #34495e); /* Darker gradient background */
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  color: #333;
+  color: #ecf0f1; 
 }
 
 /* Main container for login/register with image */
@@ -18,10 +18,10 @@ body {
   align-items: center;
   width: 100%;
   max-width: 1200px;
-  padding: 20px;
-  background-color: #ffffff;
+  padding: 30px;
+  background-color: #1c2833; 
   border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   transition: all 0.3s ease-in-out;
   overflow: hidden;
 }
@@ -36,15 +36,15 @@ body {
 }
 
 .auth-image img {
-  max-width: 80%;
+  max-width: 85%;
   height: auto;
   border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
   transition: transform 0.3s ease;
 }
 
 .auth-image img:hover {
-  transform: scale(1.05); 
+  transform: scale(1.08); 
 }
 
 /* Form content section */
@@ -56,28 +56,30 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-left: 1px solid #e0e0e0;
-  background-color: #fff;
+  border-left: 1px solid #34495e;
+  background-color: #1c2833; 
+  border-radius: 12px;
 }
 
 /* Header styles */
 .header {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
 }
 
 .hire-me-title {
-  font-size: 40px;
+  font-size: 42px;
   font-weight: 700;
-  color: #2d2d2d;
-  margin-bottom: 10px;
+  color: #ecf0f1; 
+  margin-bottom: 15px;
   letter-spacing: 1px;
 }
 
 .tagline {
-  font-size: 16px;
-  color: #7f8c8d;
-  margin-bottom: 25px;
+  font-size: 17px;
+  color: #bdc3c7; 
+  margin-bottom: 30px;
+  font-weight: 500;
 }
 
 /* Tabs for switching between login/register */
@@ -85,31 +87,31 @@ body {
   display: flex;
   justify-content: space-around;
   width: 100%;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
 }
 
 .tab-btn {
   padding: 12px 25px;
   font-size: 16px;
-  background-color: #ecf0f1;
-  border: 2px solid #dcdcdc;
+  background-color: #7f8c8d; 
+  border: 2px solid #95a5a6; 
   border-radius: 25px;
   cursor: pointer;
   transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
-  color: #34495e;
+  color: #ecf0f1; 
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
 .tab-btn.active {
-  background-color: #3498db; /* Blue */
+  background-color: #3498db; 
   color: white;
   border-color: #3498db;
 }
 
 .tab-btn:hover {
-  background-color: #bdc3c7;
-  transform: scale(1.05); /* Slight zoom on hover */
+  background-color: #95a5a6;
+  transform: scale(1.05); 
 }
 
 /* Form Styling */
@@ -121,57 +123,60 @@ body {
 
 .auth-form label {
   font-size: 14px;
-  margin-bottom: 8px;
-  color: #5f6368;
+  margin-bottom: 10px;
+  color: #bdc3c7; 
   font-weight: 500;
 }
 
 .auth-form input {
-  padding: 14px;
+  padding: 15px;
   margin-bottom: 20px;
   font-size: 16px;
-  border: 1px solid #ccc;
+  border: 1px solid #7f8c8d; /* Darker border */
   border-radius: 8px;
-  background-color: #fafafa;
-  box-sizing: border-box;
+  background-color: #d9e7f4; /* Darker input background */
+  color: #000000; /* Lighter text color for better readability */
   transition: all 0.3s ease;
 }
 
 .auth-form input:focus {
-  border-color: #3498db; /* Blue */
+  border-color: #3498db; /* Blue focus border */
   outline: none;
   box-shadow: 0 0 6px rgba(52, 152, 219, 0.5); /* Soft blue glow */
 }
 
+/* Button Styling */
 .auth-btn {
   padding: 15px;
   font-size: 18px;
-  background-color: #3498db;
+  background-color: #3498db; /* Blue button */
   color: white;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 4px 6px rgba(71, 151, 205, 0.2); /* Soft shadow */
 }
 
 .auth-btn:hover {
-  background-color: #2980b9; 
-  transform: translateY(-3px); 
+  background-color: #2980b9; /* Darker blue */
+  transform: translateY(-3px); /* Slight lift effect */
 }
 
 .auth-btn:active {
-  transform: translateY(1px); 
+  transform: translateY(1px); /* Pressed effect */
 }
 
 /* Link to switch between forms */
 .register-text {
   text-align: center;
+  margin-top: 25px;
 }
 
 .switch-btn {
   background: none;
   border: none;
-  color: #3498db; 
+  color: #3498db; /* Blue */
   font-weight: bold;
   cursor: pointer;
   text-decoration: underline;
@@ -179,5 +184,21 @@ body {
 }
 
 .switch-btn:hover {
-  color: #2980b9; 
+  color: #2980b9; /* Darker blue */
+}
+
+/* Additional styling for register link */
+.register-now-link {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.register-now-link a {
+  color: #3498db;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.register-now-link a:hover {
+  color: #2980b9; /* Darker blue */
 }
