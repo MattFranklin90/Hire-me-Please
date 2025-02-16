@@ -1,13 +1,20 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import LandingPage from "./components/LandingPage";
-import JobListings from "./components/JobListings"; 
+import LandingPage from "./components/LandingPage"; // Import the LandingPage component
+import JobListings from "./components/JobListings";
+import UserProfile from "./components/UserProfile";
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/job-listings" element={<JobListings />} />
+        {/* Landing Page */}
+        <Route path="/" element={<LandingPage />} /> {/* Default route */}
+        
+        {/* Job Listings Page */}
+        <Route path="/jobs" element={<JobListings />} />
+        
+        {/* User Profile Page */}
+        <Route path="/profile" element={<UserProfile />} />
       </Routes>
     </Router>
   );

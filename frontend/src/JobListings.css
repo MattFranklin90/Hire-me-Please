@@ -117,8 +117,23 @@ body {
   .job-filter {
     display: flex;
     justify-content: space-between;
+    align-items: space-between;
     width: 100%;
     margin-bottom: 30px;
+  }
+
+   /* Style for Profile Button*/
+   .profile-button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .profile-button:hover {
+    background-color: #3498db;
   }
   
   .job-filter select {
@@ -139,4 +154,6 @@ body {
     outline: none;
     box-shadow: 0 0 6px rgba(52, 152, 219, 0.5);
   }
+
+ 
   

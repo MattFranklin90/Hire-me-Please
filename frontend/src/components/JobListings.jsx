@@ -1,7 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";  // Import useNavigate
 import "../JobListings.css";
 
 const JobListings = () => {
+  const navigate = useNavigate();  // Initialize navigate
+
   const jobListings = [
     {
       title: "Software Engineer",
@@ -18,7 +21,6 @@ const JobListings = () => {
       company: "DataX",
       description: "Analyze data to help drive strategic decision-making.",
     },
-    // More job listings can be added here
   ];
 
   return (
@@ -37,6 +39,11 @@ const JobListings = () => {
           <option value="web">Web Development</option>
           <option value="data">Data Science</option>
         </select>
+
+        {/* Profile Button */}
+        <button onClick={() => navigate("/profile")} className="profile-button">
+          Profile
+        </button>
       </div>
 
       {jobListings.map((job, index) => (

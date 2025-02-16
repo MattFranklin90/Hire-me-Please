@@ -21,7 +21,7 @@ const LandingPage = () => {
 
   const handleLogin = () => {
     // Directly navigate to the job listings page
-    navigate("/job-listings");
+    navigate("/jobs");
   };
 
   const handleRegister = async (e) => {

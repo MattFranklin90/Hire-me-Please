@@ -1,0 +1,71 @@
+/* Profile Container Styles */
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    height: 100vh;
+    background-color: #2a3a4b; /* Light gray background */
+    width: 100%; /* Full width */
+    box-sizing: border-box; /* Include padding in the width calculation */
+  }
+  
+  /* Profile Card */
+  .profile-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 30px;
+    background-color: #3498db; /* Blue background for the profile card */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 100%; /* Make sure card is not wider than the container */
+    max-width: 900px; /* Maximum width for the card */
+    margin-top: 30px;
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+  }
+  
+  /* Profile Picture */
+  .profile-picture img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 30px;
+  }
+  
+  /* Profile Info */
+  .profile-info {
+    flex: 1;
+  }
+  
+  .profile-info h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #ecf0f1; /* Light text for the name */
+  }
+  
+  .profile-info p {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #ecf0f1; /* Light text for details */
+  }
+  
+  /* Edit Profile Button */
+  .edit-button {
+    padding: 12px 20px;
+    background-color: #2980b9; /* Slightly darker blue for button */
+    color: white; /* White text */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+  
+  .edit-button:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+  }
+  
