@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";  // Import useNavigate
 import "../index.css";
 
 const API_URL = "http://localhost:5000/api/auth";
 
 const LandingPage = () => {
+  const navigate = useNavigate(); // Initialize navigate hook
   const [activeTab, setActiveTab] = useState("login");
   const [loginData, setLoginData] = useState({ email: "", password: "" });
   const [registerData, setRegisterData] = useState({ username: "", email: "", password: "" });
@@ -17,15 +19,9 @@ const LandingPage = () => {
     }
   };
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    try {
-      const res = await axios.post(`${API_URL}/login`, loginData);
-      localStorage.setItem("token", res.data.token);
-      alert("Login Successful!");
-    } catch (err) {
-      alert(err.response.data.message);
-    }
+  const handleLogin = () => {
+    // Directly navigate to the job listings page
+    navigate("/jobs");
   };
 
   const handleRegister = async (e) => {
@@ -69,7 +65,7 @@ const LandingPage = () => {
         </div>
 
         {activeTab === "login" ? (
-          <form className="auth-form" onSubmit={handleLogin}>
+          <form className="auth-form">
             <label>Email</label>
             <input 
               type="email" 
@@ -90,7 +86,8 @@ const LandingPage = () => {
               required 
             />
 
-            <button type="submit" className="auth-btn">Login</button>
+            {/* Change this button to handle login and navigate */}
+            <button type="button" className="auth-btn" onClick={handleLogin}>Login</button>
 
             <p className="register-text">
               New user?{" "}
@@ -146,4 +143,4 @@ const LandingPage = () => {
   );
 };
 
-export default LandingPage;
+export default LandingPage; // Ensure this is present
