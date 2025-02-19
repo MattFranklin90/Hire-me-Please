@@ -1,27 +1,41 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";  // Import useNavigate
 import "../JobListings.css";
 
 const JobListings = () => {
   const navigate = useNavigate();  // Initialize navigate
+  const [jobListings, setJobListings] = useState([]);  // State to store job listings
+  const [loading, setLoading] = useState(true);  // Loading state
+  const [error, setError] = useState(null);  // Error state
 
-  const jobListings = [
-    {
-      title: "Software Engineer",
-      company: "TechCorp",
-      description: "Join our team to develop cutting-edge software solutions.",
-    },
-    {
-      title: "Web Developer",
-      company: "WebWorks",
-      description: "Build dynamic and responsive web applications with us.",
-    },
-    {
-      title: "Data Scientist",
-      company: "DataX",
-      description: "Analyze data to help drive strategic decision-making.",
-    },
-  ];
+  // Fetch job listings from the backend
+  useEffect(() => {
+    const fetchJobs = async () => {
+      try {
+        const response = await fetch("http://localhost:5000/jobs"); // Update with your backend URL
+        if (!response.ok) {
+          throw new Error("Failed to fetch job listings.");
+        }
+        const data = await response.json();
+        setJobListings(data);  // Set job data to state
+      } catch (err) {
+        setError(err.message);  // Handle errors
+      } finally {
+        setLoading(false);  // Set loading to false when data is fetched
+      }
+    };
+
+    fetchJobs();
+  }, []);
+
+  // Render loading, error, or job listings
+  if (loading) {
+    return <div>Loading job listings...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
 
   return (
     <div className="job-listings-container">
