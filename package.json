@@ -4,13 +4,12 @@
   "description": "A web app where job seekers can track job applications, statuses, and interviews.",
   "main": "index.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test"
+    "start": "react-scripts start --prefix frontend",
+    "build": "react-scripts build --prefix frontend",
+    "test": "react-scripts test --prefix frontend",
+    "backend": "node backend/server.js",
+    "dev": "concurrently \"npm run backend\" \"npm start\""
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "engines": {
     "node": ">=18.18.0 <21.0.0"
   },
@@ -25,7 +24,8 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "7.1.5",
-    "react-scripts": "^5.0.0"
+    "react-scripts": "^5.0.0",
+    "concurrently": "^7.4.0"
   },
   "browserslist": {
     "production": [
