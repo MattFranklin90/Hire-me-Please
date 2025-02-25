@@ -1,7 +1,48 @@
 {
+
   "dependencies": {
     "autoprefixer": "^10.4.20",
     "postcss": "^8.5.2",
     "tailwindcss": "^4.0.7"
+  "name": "hire-me-please",
+  "version": "1.0.0",
+  "description": "A web app where job seekers can track job applications, statuses, and interviews.",
+  "main": "index.js",
+  "scripts": {
+    "start": "react-scripts start --prefix frontend",
+    "build": "react-scripts build --prefix frontend",
+    "test": "react-scripts test --prefix frontend",
+    "backend": "node backend/server.js",
+    "dev": "concurrently \"npm run backend\" \"npm start\""
+  },
+  "engines": {
+    "node": ">=18.18.0 <21.0.0"
+  },
+  "dependencies": {
+    "axios": "^1.7.9",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.10.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "7.1.5",
+    "react-scripts": "^5.0.0",
+    "concurrently": "^7.4.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+
   }
 }
