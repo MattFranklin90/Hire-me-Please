@@ -1,41 +1,45 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";  // Import useNavigate
+import { useNavigate } from "react-router-dom";
 import "../JobListings.css";
 
 const JobListings = () => {
-  const navigate = useNavigate();  // Initialize navigate
-  const [jobListings, setJobListings] = useState([]);  // State to store job listings
-  const [loading, setLoading] = useState(true);  // Loading state
-  const [error, setError] = useState(null);  // Error state
+  const navigate = useNavigate();
+  const [jobListings, setJobListings] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  // Fetch job listings from the backend
   useEffect(() => {
     const fetchJobs = async () => {
+      const url = "https://jsearch.p.rapidapi.com/search?query=Software%20Developer&num_pages=1"; // Adjust query as needed
+
+      const options = {
+        method: "GET",
+        headers: {
+          "X-RapidAPI-Key": process.env.REACT_APP_RAPIDAPI_KEY,
+          "X-RapidAPI-Host": process.env.REACT_APP_RAPIDAPI_HOST,
+        },
+      };
+
       try {
-        const response = await fetch("http://localhost:5000/jobs"); // Update with your backend URL
+        const response = await fetch(url, options);
         if (!response.ok) {
-          throw new Error("Failed to fetch job listings.");
+          throw new Error(`Failed to fetch job listings: ${response.status}`);
         }
         const data = await response.json();
-        setJobListings(data);  // Set job data to state
+        console.log("API Response:", data); // Debug response
+        setJobListings(data.data || []); // Adjust based on API response format
       } catch (err) {
-        setError(err.message);  // Handle errors
+        setError(err.message);
       } finally {
-        setLoading(false);  // Set loading to false when data is fetched
+        setLoading(false);
       }
     };
 
     fetchJobs();
   }, []);
 
-  // Render loading, error, or job listings
-  if (loading) {
-    return <div>Loading job listings...</div>;
-  }
-
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
+  if (loading) return <div>Loading job listings...</div>;
+  if (error) return <div>Error: {error}</div>;
 
   return (
     <div className="job-listings-container">
@@ -54,24 +58,29 @@ const JobListings = () => {
           <option value="data">Data Science</option>
         </select>
 
-        {/* Profile Button */}
         <button onClick={() => navigate("/profile")} className="profile-button">
           Profile
         </button>
       </div>
 
-      {jobListings.map((job, index) => (
-        <div key={index} className="job-card">
-          <div className="job-card-header">
-            <h3 className="job-card-title">{job.title}</h3>
-            <span className="job-card-company">{job.company}</span>
+      {jobListings.length === 0 ? (
+        <div>No job listings available.</div>
+      ) : (
+        jobListings.map((job, index) => (
+          <div key={index} className="job-card">
+            <div className="job-card-header">
+              <h3 className="job-card-title">{job.job_title || "No Title"}</h3>
+              <span className="job-card-company">{job.employer_name || "Unknown Company"}</span>
+            </div>
+            <p className="job-card-description">{job.job_description || "No Description Available"}</p>
+            <div className="job-card-footer">
+              <a href={job.job_apply_link} target="_blank" rel="noopener noreferrer">
+                <button className="job-card-button">Apply Now</button>
+              </a>
+            </div>
           </div>
-          <p className="job-card-description">{job.description}</p>
-          <div className="job-card-footer">
-            <button className="job-card-button">Apply Now</button>
-          </div>
-        </div>
-      ))}
+        ))
+      )}
     </div>
   );
 };
