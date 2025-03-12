@@ -1,71 +1,187 @@
-/* Profile Container Styles */
-.profile-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 20px;
-    height: 100vh;
-    background-color: #2a3a4b; /* Light gray background */
-    width: 100%; /* Full width */
-    box-sizing: border-box; /* Include padding in the width calculation */
-  }
-  
-  /* Profile Card */
-  .profile-card {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 30px;
-    background-color: #3498db; /* Blue background for the profile card */
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    width: 100%; /* Make sure card is not wider than the container */
-    max-width: 900px; /* Maximum width for the card */
-    margin-top: 30px;
-    box-sizing: border-box; /* Ensure padding doesn't affect width */
-  }
-  
-  /* Profile Picture */
-  .profile-picture img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 30px;
-  }
-  
-  /* Profile Info */
-  .profile-info {
-    flex: 1;
-  }
-  
-  .profile-info h2 {
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 15px;
-    color: #ecf0f1; /* Light text for the name */
-  }
-  
-  .profile-info p {
-    font-size: 18px;
-    margin-bottom: 10px;
-    color: #ecf0f1; /* Light text for details */
-  }
-  
-  /* Edit Profile Button */
-  .edit-button {
-    padding: 12px 20px;
-    background-color: #2980b9; /* Slightly darker blue for button */
-    color: white; /* White text */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 20px;
-  }
-  
-  .edit-button:hover {
-    background-color: #2980b9; /* Darker blue on hover */
-  }
-  
+/* Container styling */
+.user-profile-container {
+  padding: 15px;
+  background-color: #1e1e1e;  /* Darker background for better contrast */
+  color: #f1f1f1;  /* Lighter text for readability */
+  width: 100%;
+  max-width: 800px;
+  min-height: 400px;
+  height: auto;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);  /* Slightly more intense shadow */
+  margin: 20px auto;
+}
+
+/* Profile Header */
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.profile-header h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #e0e0e0;  /* Lighter header color */
+  margin-right: auto;
+  letter-spacing: 0.8px;
+}
+
+/* Button styling */
+.go-to-jobs-btn,
+.save-job-btn,
+.delete-job-btn {
+  background-color: #5a4b8b;  /* Darker, more subdued purple */
+  color: white;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s ease-in-out;
+  border: none;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover effect for buttons */
+.go-to-jobs-btn:hover,
+.save-job-btn:hover,
+.delete-job-btn:hover {
+  background-color: #4c3b6e;  /* Darker purple on hover */
+  transform: scale(1.03);
+}
+
+/* Delete Job Button */
+.delete-job-btn {
+  background-color: #141414;  /* Softer red for delete button */
+}
+
+.delete-job-btn:hover {
+  background-color: #ca2020;  /* Slightly darker red */
+}
+
+/* Saved Jobs section */
+.saved-jobs {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.saved-jobs h3 {
+  font-size: 1.5rem;
+  color: #f1f1f1;  /* Lighter text color */
+  margin-bottom: 8px;
+}
+
+/* List of Saved Jobs */
+.saved-jobs-list {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Saved Job Item */
+.saved-job-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background-color: #2c2f38;  /* Slightly darker background for saved jobs */
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.saved-job-item:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  transform: scale(1.02);
+}
+
+/* Job Info */
+.saved-job-item .job-info {
+  max-width: 65%;
+}
+
+.saved-job-item .job-info h4 {
+  font-size: 1.1rem;
+  color: #f1f1f1;  /* Light color for job titles */
+  font-weight: 600;
+}
+
+.saved-job-item .job-info p {
+  font-size: 0.9rem;
+  color: #aaa;  /* Slightly muted gray for description text */
+}
+
+.saved-job-item .job-status {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #9b74d4; /* Soft lavender accent color for job status */
+}
+
+/* Job Actions */
+.saved-job-item .job-actions {
+  display: flex;
+  gap: 6px;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.saved-job-item .job-actions button {
+  padding: 6px 12px;
+  font-size: 12px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s ease-in-out;
+}
+
+/* Accept & Reject buttons */
+.accept-job-btn {
+  background-color: #094d0b; /* Softer green for Accept */
+  color: white;
+}
+
+.accept-job-btn:hover {
+  background-color: #45a049;
+}
+
+.reject-job-btn {
+  background-color: #a9322a; /* Red for Reject */
+  color: white;
+}
+
+.reject-job-btn:hover {
+  background-color: #e53935;
+}
+
+/* Add Job Section */
+.add-job {
+  margin-top: 20px;
+}
+
+/* Save Job Button */
+.save-job-btn {
+  background-color: #5a4b8b;
+  color: white;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s ease-in-out;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover effect for Save Job */
+.save-job-btn:hover {
+  background-color: #4c3b6e;
+  transform: scale(1.03);
+}

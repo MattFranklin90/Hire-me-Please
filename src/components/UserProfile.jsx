@@ -1,39 +1,101 @@
-import React, { useState } from "react";
-import "../UserProfile.css"; // This moves up one level from components to src
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import "../UserProfile.css"; // Add the necessary styles
 
 const UserProfile = () => {
-  const [user, setUser] = useState({
-    name: "John Doe",
-    email: "johndoe@example.com",
-    phone: "123-456-7890",
-    resume: "resume.pdf",
-    profilePicture: "https://via.placeholder.com/150", // Placeholder profile pic
-  });
+  const [savedJobs, setSavedJobs] = useState([]);
 
-  const handleEdit = () => {
-    alert("Edit Profile Clicked! Add form functionality here.");
+  // Fetch saved jobs from localStorage
+  useEffect(() => {
+    const savedJobsFromStorage = JSON.parse(localStorage.getItem("savedJobs")) || [];
+    setSavedJobs(savedJobsFromStorage);
+  }, []);
+
+  // Handle deleting a job from saved jobs
+  const deleteJob = (jobId) => {
+    const updatedSavedJobs = savedJobs.filter((job) => job.job_id !== jobId);
+    setSavedJobs(updatedSavedJobs);
+    localStorage.setItem("savedJobs", JSON.stringify(updatedSavedJobs));
+  };
+
+  // Handle updating job status and color change
+  const updateJobStatus = (jobId, status) => {
+    const updatedSavedJobs = savedJobs.map((job) =>
+      job.job_id === jobId ? { ...job, status } : job
+    );
+    setSavedJobs(updatedSavedJobs);
+    localStorage.setItem("savedJobs", JSON.stringify(updatedSavedJobs));
+  };
+
+  // Function to determine the status word color for Accepted, Rejected, and Pending
+  const getStatusWordColor = (status) => {
+    switch (status) {
+      case "Accepted":
+        return "#4caf50"; // Green for Accepted
+      case "Rejected":
+        return "#e53935"; // Red for Rejected
+      case "Pending":
+        return "#9b74d4"; // Purple for Pending
+      default:
+        return "#9b74d4"; // Default to purple for any other status
+    }
   };
 
   return (
-    <div className="profile-container">
-      <h1 className="profile-title">My Profile</h1>
-      
-      <div className="profile-card">
-        {/* Profile Picture */}
-        <div className="profile-picture">
-          <img src={user.profilePicture} alt="Profile" />
-        </div>
+    <div className="user-profile-container">
+      <div className="profile-header">
+        <h2>Your Profile</h2>
+        <Link to="/jobs">
+          <button className="go-to-jobs-btn">Back to Job Listings</button>
+        </Link>
+      </div>
 
-        {/* User Details */}
-        <div className="profile-info">
-          <h2>{user.name}</h2>
-          <p><strong>Email:</strong> {user.email}</p>
-          <p><strong>Phone:</strong> {user.phone}</p>
-          <p><strong>Resume:</strong> <a href={user.resume} download>Download</a></p>
-          
-          {/* Edit Profile Button */}
-          <button className="edit-button" onClick={handleEdit}>Edit Profile</button>
-        </div>
+      <div className="saved-jobs">
+        <h3>Saved Jobs</h3>
+        {savedJobs.length === 0 ? (
+          <p>No saved jobs yet. Start saving your favorite jobs!</p>
+        ) : (
+          <ul className="saved-jobs-list">
+            {savedJobs.map((job) => (
+              <li key={job.job_id} className="saved-job-item">
+                <div className="job-info">
+                  <h4>{job.job_title}</h4>
+                  <p>{job.employer_name}</p>
+                  <p>
+                    Status:{" "}
+                    <span
+                      style={{
+                        color: getStatusWordColor(job.status || "Pending"), // Default to "Pending" color
+                      }}
+                    >
+                      {job.status || "Pending"}
+                    </span>
+                  </p>
+                </div>
+                <div className="job-actions">
+                  <button
+                    className="delete-job-btn"
+                    onClick={() => deleteJob(job.job_id)}
+                  >
+                    Delete
+                  </button>
+                  <button
+                    className="accept-job-btn"
+                    onClick={() => updateJobStatus(job.job_id, "Accepted")}
+                  >
+                    Accept
+                  </button>
+                  <button
+                    className="reject-job-btn"
+                    onClick={() => updateJobStatus(job.job_id, "Rejected")}
+                  >
+                    Reject
+                  </button>
+                </div>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </div>
   );
