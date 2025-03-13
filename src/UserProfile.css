@@ -1,8 +1,8 @@
 /* Container styling */
 .user-profile-container {
   padding: 15px;
-  background-color: #1e1e1e;  /* Darker background for better contrast */
-  color: #f1f1f1;  /* Lighter text for readability */
+  background-color: #1e1e1e;  
+  color: #f1f1f1;  
   width: 100%;
   max-width: 800px;
   min-height: 400px;
@@ -13,7 +13,7 @@
   align-items: center;
   justify-content: flex-start;
   border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);  /* Slightly more intense shadow */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);  
   margin: 20px auto;
 }
 
@@ -29,7 +29,7 @@
 .profile-header h2 {
   font-size: 1.8rem;
   font-weight: bold;
-  color: #e0e0e0;  /* Lighter header color */
+  color: #e0e0e0;  
   margin-right: auto;
   letter-spacing: 0.8px;
 }
@@ -38,7 +38,7 @@
 .go-to-jobs-btn,
 .save-job-btn,
 .delete-job-btn {
-  background-color: #5a4b8b;  /* Darker, more subdued purple */
+  background-color: #5a4b8b;  
   color: white;
   padding: 8px 16px;
   font-size: 14px;
@@ -53,17 +53,17 @@
 .go-to-jobs-btn:hover,
 .save-job-btn:hover,
 .delete-job-btn:hover {
-  background-color: #4c3b6e;  /* Darker purple on hover */
+  background-color: #4c3b6e;  
   transform: scale(1.03);
 }
 
 /* Delete Job Button */
 .delete-job-btn {
-  background-color: #141414;  /* Softer red for delete button */
+  background-color: #141414;  
 }
 
 .delete-job-btn:hover {
-  background-color: #ca2020;  /* Slightly darker red */
+  background-color: #ca2020;  
 }
 
 /* Saved Jobs section */
@@ -74,7 +74,7 @@
 
 .saved-jobs h3 {
   font-size: 1.5rem;
-  color: #f1f1f1;  /* Lighter text color */
+  color: #f1f1f1;  
   margin-bottom: 8px;
 }
 
@@ -94,7 +94,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 12px;
-  background-color: #2c2f38;  /* Slightly darker background for saved jobs */
+  background-color: #2c2f38;  
   border-radius: 8px;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
@@ -112,19 +112,19 @@
 
 .saved-job-item .job-info h4 {
   font-size: 1.1rem;
-  color: #f1f1f1;  /* Light color for job titles */
+  color: #f1f1f1;  
   font-weight: 600;
 }
 
 .saved-job-item .job-info p {
   font-size: 0.9rem;
-  color: #aaa;  /* Slightly muted gray for description text */
+  color: #aaa;  
 }
 
 .saved-job-item .job-status {
   font-size: 0.85rem;
   font-weight: 500;
-  color: #9b74d4; /* Soft lavender accent color for job status */
+  color: #9b74d4; 
 }
 
 /* Job Actions */
@@ -146,7 +146,7 @@
 
 /* Accept & Reject buttons */
 .accept-job-btn {
-  background-color: #094d0b; /* Softer green for Accept */
+  background-color: #094d0b; 
   color: white;
 }
 
@@ -155,7 +155,7 @@
 }
 
 .reject-job-btn {
-  background-color: #a9322a; /* Red for Reject */
+  background-color: #a9322a; 
   color: white;
 }
 

@@ -160,10 +160,10 @@ button:disabled {
 
 .modal-content {
   background: #222;
-  padding: 15px; /* Reduced padding */
+  padding: 15px; 
   border-radius: 10px;
   width: 80%;
-  max-width: 700px; /* Smaller max width */
+  max-width: 700px; 
   color: #fff;
 }
 
@@ -174,39 +174,39 @@ button:disabled {
 }
 
 .modal-body {
-  margin-top: 15px; /* Reduced margin */
-  font-size: 0.95rem; /* Smaller font size */
-  line-height: 1.4; /* Reduced line height */
+  margin-top: 15px; 
+  font-size: 0.95rem; 
+  line-height: 1.4; 
 }
 
 .close-modal-btn {
   background: rgba(231, 76, 60, 0.8);
   color: #fff;
-  padding: 6px 12px; /* Smaller padding */
-  border-radius: 20px; /* Smaller border-radius */
+  padding: 6px 12px; 
+  border-radius: 20px; 
   cursor: pointer;
 }
 
 .apply-now-btn {
   background-color: rgba(128, 128, 128, 0.7);
   color: #fff;
-  padding: 10px 20px; /* Smaller padding */
-  border-radius: 20px; /* Smaller border-radius */
-  font-size: 0.9rem; /* Smaller font size */
+  padding: 10px 20px; 
+  border-radius: 20px; 
+  font-size: 0.9rem; 
 }
 
 /* Go to Profile button */
 .go-to-profile {
   position: absolute;
-  top: 40px; /* Reduced position */
-  right: 20px; /* Reduced position */
+  top: 40px; 
+  right: 20px; 
   z-index: 10;
 }
 
 .go-to-login {
   position: absolute;
-  top: 40px; /* Reduced position */
-  left: 20px; /* Reduced position */
+  top: 40px; 
+  left: 20px; 
   z-index: 10;
 }
 
@@ -215,9 +215,9 @@ button:disabled {
   background-color: rgba(128, 128, 128, 0.7);
   color: #fff;
   border: none;
-  padding: 10px 20px; /* Smaller padding */
-  border-radius: 5px; /* Smaller border-radius */
-  font-size: 0.9rem; /* Smaller font size */
+  padding: 10px 20px; 
+  border-radius: 5px; 
+  font-size: 0.9rem; 
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 3px 8px rgba(128, 128, 128, 0.6); /* Smaller shadow */
