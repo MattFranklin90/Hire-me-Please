@@ -3,7 +3,7 @@ body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
-  background: linear-gradient(135deg, #2c3e50, #34495e); /* Darker gradient background */
+  background: linear-gradient(135deg, #2b2b2b, #1c1c1c); /* Darker gradient background */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,7 +19,7 @@ body {
   width: 100%;
   max-width: 1200px;
   padding: 30px;
-  background-color: #1c2833; 
+  background-color: #1c1c1c; /* Dark gray background */
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   transition: all 0.3s ease-in-out;
@@ -56,8 +56,8 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-left: 1px solid #34495e;
-  background-color: #1c2833; 
+  border-left: 1px solid #444; /* Darker border */
+  background-color: #1c1c1c; /* Dark gray background */
   border-radius: 12px;
 }
 
@@ -93,8 +93,8 @@ body {
 .tab-btn {
   padding: 12px 25px;
   font-size: 16px;
-  background-color: #7f8c8d; 
-  border: 2px solid #95a5a6; 
+  background-color: #555; /* Dark gray */
+  border: 2px solid #666; 
   border-radius: 25px;
   cursor: pointer;
   transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
@@ -104,13 +104,13 @@ body {
 }
 
 .tab-btn.active {
-  background-color: #3498db; 
+  background-color: #333; /* Even darker gray */
   color: white;
-  border-color: #3498db;
+  border-color: #333;
 }
 
 .tab-btn:hover {
-  background-color: #95a5a6;
+  background-color: #666;
   transform: scale(1.05); 
 }
 
@@ -134,13 +134,13 @@ body {
   font-size: 16px;
   border: 1px solid #7f8c8d; /* Darker border */
   border-radius: 8px;
-  background-color: #d9e7f4; /* Darker input background */
-  color: #000000; /* Lighter text color for better readability */
+  background-color: #34495e; /* Darker input background */
+  color: #ecf0f1; /* Lighter text color for better readability */
   transition: all 0.3s ease;
 }
 
 .auth-form input:focus {
-  border-color: #3498db; /* Blue focus border */
+  border-color: #2980b9; /* Focus color */
   outline: none;
   box-shadow: 0 0 6px rgba(52, 152, 219, 0.5); /* Soft blue glow */
 }
